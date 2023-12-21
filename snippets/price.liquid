@@ -79,10 +79,11 @@
       {%- else -%}
         <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
         <span class="price-item price-item--regular">
-          {% if money_price > "10" %}
-          <span style="color: green;">{{ money_price }}</span>
-          {% elsif money_price < "10" %}
-          <span style="color: red;">{{ money_price }}</span>
+          {{ money_price }}
+           {% if money_price > "10" %}
+            <span style="color: red;">{{ money_price }}</span>
+          {% else %}
+            <span style="color: green;">{{ money_price }}</span>
           {% endif %}
         </span>
       {%- endif -%}
